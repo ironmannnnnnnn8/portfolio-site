@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kunal Rathod - Robotics Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-brand">Kunal Rathod</div>
+                <ul class="nav-menu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#teaching">Teaching</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <h1 class="hero-title">Hi, I'm <span class="highlight">Kunal Rathod (aadhaengineer)</span></h1>
+            <p class="hero-subtitle">Robotics Enthusiast | Mechanical Engineering Student</p>
+            <p class="hero-description">Exploring the intersection of mechanics, automation, and intelligent systems</p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-grid">
+                <!-- Profile Image -->
+                <div class="profile-card">
+                    <div class="profile-image">
+                        <img src="kunal-pfp.jpeg" alt="Kunal Rathod">
+                        <!-- If no image, remove img tag and uncomment below -->
+                        <!-- <div class="placeholder-image">Your Photo</div> -->
+                    </div>
+                    <div class="profile-info">
+                        <h3>Contact</h3>
+                        <p>📧 your.email@example.com</p>
+                        <p>📍 Nipāni, Maharashtra, IN</p>
+                        <p>🎓 B.Tech Mechanical Engineering</p>
+                    </div>
+                </div>
+
+                <!-- About Content -->
+                <div class="about-content">
+                    <h2 class="section-title">About Me</h2>
+                    <p class="about-text">
+                        I'm a passionate robotics enthusiast currently pursuing my undergraduate degree in 
+                        Mechanical Engineering. My fascination with robotics stems from the incredible potential 
+                        to create intelligent machines that can interact with and improve our world.
+                    </p>
+                    <p class="about-text">
+                        From designing mechanical systems to programming autonomous behaviors, I love every 
+                        aspect of bringing robotic concepts to life. Through my academic journey and personal 
+                        projects, I've developed a strong foundation in mechanical design, control systems, 
+                        and programming.
+                    </p>
+
+                    <!-- Info Cards -->
+                    <div class="info-cards">
+                        <div class="info-card">
+                            <h3>🎓 Education</h3>
+                            <p><strong>B.Tech Mechanical Engineering</strong></p>
+                            <p>Your University Name</p>
+                            <p>Expected Graduation: 2026</p>
+                            <p>CGPA: X.XX/10</p>
+                        </div>
+
+                        <div class="info-card">
+                            <h3>💼 Experience</h3>
+                            <p><strong>Robotics Club Member</strong></p>
+                            <p>Club Name | 2023-Present</p>
+                            <p><strong>Engineering Intern</strong></p>
+                            <p>Company Name | Summer 2024</p>
+                        </div>
+
+                        <div class="info-card">
+                            <h3>🛠️ Technical Skills</h3>
+                            <ul>
+                                <li>CAD: SolidWorks, AutoCAD, Fusion 360</li>
+                                <li>Programming: Python, C++, MATLAB</li>
+                                <li>Robotics: ROS, Arduino, Raspberry Pi</li>
+                                <li>Tools: Git, Linux, Computer Vision</li>
+                            </ul>
+                        </div>
+
+                        <div class="info-card">
+                            <h3>🎯 Interests</h3>
+                            <ul>
+                                <li>Mobile & Autonomous Robotics</li>
+                                <li>Mechatronics & Control Systems</li>
+                                <li>Computer Vision & AI</li>
+                                <li>Manufacturing & 3D Printing</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Autonomous Line Following Robot</h3>
+                        <span class="project-tag">Robotics</span>
+                    </div>
+                    <p class="project-description">
+                        Designed and built an autonomous robot capable of following complex paths using 
+                        IR sensors and PID control. Implemented on Arduino with custom PCB design.
+                    </p>
+                    <div class="project-tech">
+                        <span>Arduino</span>
+                        <span>C++</span>
+                        <span>PID Control</span>
+                    </div>
+                    <a href="projext-template.html" class="project-link">View Project →</a>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Robotic Arm Manipulator</h3>
+                        <span class="project-tag">Mechatronics</span>
+                    </div>
+                    <p class="project-description">
+                        Created a 5-DOF robotic arm with inverse kinematics implementation. Controlled 
+                        via ROS with real-time trajectory planning and object detection capabilities.
+                    </p>
+                    <div class="project-tech">
+                        <span>ROS</span>
+                        <span>Python</span>
+                        <span>OpenCV</span>
+                    </div>
+                    <a href="#" class="project-link">View Project →</a>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Smart Warehouse System</h3>
+                        <span class="project-tag">Automation</span>
+                    </div>
+                    <p class="project-description">
+                        Developed an automated warehouse management system with mobile robots for 
+                        inventory tracking and material handling using computer vision and path planning.
+                    </p>
+                    <div class="project-tech">
+                        <span>Raspberry Pi</span>
+                        <span>Computer Vision</span>
+                        <span>IoT</span>
+                    </div>
+                    <a href="#" class="project-link">View Project →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Teaching Section -->
+    <section id="teaching" class="teaching">
+        <div class="container">
+            <h2 class="section-title">Teaching & Resources</h2>
+            <div class="teaching-grid">
+                <div class="teaching-card">
+                    <div class="teaching-icon">📚</div>
+                    <h3>Introduction to Robotics</h3>
+                    <p>A comprehensive course covering fundamentals of robotics including kinematics, 
+                    dynamics, and control systems with hands-on projects.</p>
+                    <a href="#" class="btn-primary">Access Course</a>
+                </div>
+
+                <div class="teaching-card">
+                    <div class="teaching-icon">🔧</div>
+                    <h3>Arduino for Beginners</h3>
+                    <p>Step-by-step tutorials on getting started with Arduino, from basic circuits 
+                    to building your first robot with sensor integration.</p>
+                    <a href="#" class="btn-primary">View Tutorials</a>
+                </div>
+
+                <div class="teaching-card">
+                    <div class="teaching-icon">🤖</div>
+                    <h3>ROS Workshop Materials</h3>
+                    <p>Complete workshop content for Robot Operating System including navigation, 
+                    SLAM, and robot simulation in Gazebo.</p>
+                    <a href="#" class="btn-primary">Get Materials</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="blog">
+        <div class="container">
+            <h2 class="section-title">Blog</h2>
+            
+            <article class="blog-post">
+                <div class="blog-meta">
+                    <span class="blog-date">January 5, 2026</span>
+                    <span class="blog-read-time">5 min read</span>
+                </div>
+                <h3 class="blog-title">Building My First Autonomous Robot</h3>
+                <p class="blog-excerpt">
+                    In this post, I share my journey of building an autonomous robot from scratch. 
+                    From selecting components to implementing path planning algorithms, here's everything 
+                    I learned along the way and the challenges I overcame...
+                </p>
+                <a href="blog-template.html" class="blog-link">Read More →</a>
+            </article>
+
+            <article class="blog-post">
+                <div class="blog-meta">
+                    <span class="blog-date">December 28, 2025</span>
+                    <span class="blog-read-time">7 min read</span>
+                </div>
+                <h3 class="blog-title">Understanding PID Control for Robotics</h3>
+                <p class="blog-excerpt">
+                    PID control is fundamental in robotics. This article breaks down the concepts of 
+                    Proportional, Integral, and Derivative control with practical examples and tuning 
+                    strategies for smooth robot motion...
+                </p>
+                <a href="#" class="blog-link">Read More →</a>
+            </article>
+
+            <article class="blog-post">
+                <div class="blog-meta">
+                    <span class="blog-date">December 15, 2025</span>
+                    <span class="blog-read-time">6 min read</span>
+                </div>
+                <h3 class="blog-title">Getting Started with ROS: A Beginner's Guide</h3>
+                <p class="blog-excerpt">
+                    Robot Operating System (ROS) can seem daunting at first. In this guide, I explain 
+                    the core concepts, installation process, and create your first robot simulation to 
+                    help you get started with confidence...
+                </p>
+                <a href="#" class="blog-link">Read More →</a>
+            </article>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Kunal Rathod. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#" target="_blank">Instagram</a>
+                <a href="#" target="_blank">Youtube</a>
+                <a href="#" target="_blank">GitHub</a>
+                <a href="#" target="_blank">LinkedIn</a>
+                <a href="mailto:kdkunalr06@gmail.com">Email</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Post Title - Your Name</title>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        .blog-detail {
+            padding: 5rem 0;
+            background: white;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: #2c5aa0;
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            gap: 8px;
+        }
+
+        .blog-header-detail {
+            margin-bottom: 3rem;
+            max-width: 800px;
+        }
+
+        .blog-title-main {
+            font-size: 3rem;
+            color: #1a365d;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .blog-meta-detail {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+            color: #718096;
+            font-size: 0.95rem;
+        }
+
+        .blog-meta-detail span::before {
+            margin-right: 0.5rem;
+        }
+
+        .blog-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .blog-tag {
+            background: #e6f2ff;
+            color: #2c5aa0;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .blog-content {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 3rem;
+        }
+
+        .main-content {
+            max-width: 800px;
+        }
+
+        .sidebar {
+            height: fit-content;
+            position: sticky;
+            top: 100px;
+        }
+
+        .sidebar-card {
+            background: #f7fafc;
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+        }
+
+        .sidebar-card h3 {
+            color: #1a365d;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .toc-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .toc-list li {
+            margin-bottom: 0.8rem;
+        }
+
+        .toc-list a {
+            color: #4a5568;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            display: block;
+            padding: 0.3rem 0;
+        }
+
+        .toc-list a:hover {
+            color: #2c5aa0;
+            padding-left: 0.5rem;
+        }
+
+        .author-card {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .author-avatar {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #2c5aa0, #4a90e2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+
+        .author-info h4 {
+            color: #1a365d;
+            margin-bottom: 0.2rem;
+        }
+
+        .author-info p {
+            color: #718096;
+            font-size: 0.85rem;
+        }
+
+        .blog-section {
+            margin-bottom: 3rem;
+        }
+
+        .blog-section h2 {
+            color: #1a365d;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            margin-top: 3rem;
+            padding-top: 1rem;
+            border-top: 1px solid #e6f2ff;
+        }
+
+        .blog-section h3 {
+            color: #2c5aa0;
+            font-size: 1.5rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .blog-section p {
+            color: #4a5568;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+        }
+
+        .blog-section ul,
+        .blog-section ol {
+            color: #4a5568;
+            line-height: 1.8;
+            margin-left: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .blog-section li {
+            margin-bottom: 0.8rem;
+        }
+
+        .highlight-box {
+            background: #e6f2ff;
+            border-left: 4px solid #2c5aa0;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+        }
+
+        .highlight-box p {
+            margin: 0;
+            color: #1a365d;
+        }
+
+        .image-placeholder {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, #e6f2ff, #f0f7ff);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #2c5aa0;
+            font-size: 1.2rem;
+            margin: 2rem 0;
+        }
+
+        .code-block {
+            background: #1a365d;
+            color: #e6f2ff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 1.5rem 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .related-posts {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+
+        .related-post-item {
+            background: white;
+            border: 1px solid #e6f2ff;
+            padding: 1rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .related-post-item:hover {
+            border-color: #2c5aa0;
+            transform: translateX(5px);
+        }
+
+        .related-post-item a {
+            color: #2c5aa0;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .related-post-item p {
+            font-size: 0.85rem;
+            color: #718096;
+            margin: 0.5rem 0 0 0;
+        }
+
+        @media (max-width: 968px) {
+            .blog-content {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar {
+                position: static;
+            }
+
+            .blog-title-main {
+                font-size: 2rem;
+            }
+
+            .blog-section h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-brand">Your Name</div>
+                <ul class="nav-menu">
+                    <li><a href="../index.html#home">Home</a></li>
+                    <li><a href="../index.html#about">About</a></li>
+                    <li><a href="../index.html#projects">Projects</a></li>
+                    <li><a href="../index.html#teaching">Teaching</a></li>
+                    <li><a href="../index.html#blog">Blog</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Blog Detail -->
+    <section class="blog-detail">
+        <div class="container">
+            <a href="../index.html#blog" class="back-link">← Back to Blog</a>
+
+            <div class="blog-header-detail">
+                <h1 class="blog-title-main">Building My First Autonomous Robot: A Journey</h1>
+                <div class="blog-meta-detail">
+                    <span>📅 January 5, 2026</span>
+                    <span>⏱️ 8 min read</span>
+                    <span>👁️ 234 views</span>
+                </div>
+                <div class="blog-tags">
+                    <span class="blog-tag">Robotics</span>
+                    <span class="blog-tag">Arduino</span>
+                    <span class="blog-tag">Tutorial</span>
+                    <span class="blog-tag">Beginner-Friendly</span>
+                </div>
+            </div>
+
+            <div class="blog-content">
+                <div class="main-content">
+                    <!-- Introduction -->
+                    <div class="blog-section">
+                        <p>
+                            Building my first autonomous robot was one of the most exciting and challenging 
+                            experiences of my engineering journey. In this post, I'll share everything I 
+                            learned—from selecting the right components to debugging stubborn bugs at 2 AM. 
+                            Whether you're just starting out or looking to improve your robotics skills, I 
+                            hope this guide helps you on your journey.
+                        </p>
+
+                        <div class="image-placeholder">
+                            [Featured Image: Completed Robot]
+                        </div>
+
+                        <div class="highlight-box">
+                            <p>
+                                <strong>Key Takeaway:</strong> Starting with a simple project and iterating 
+                                is much better than trying to build something complex from the beginning. 
+                                You'll learn more and stay motivated along the way.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Planning Section -->
+                    <div class="blog-section">
+                        <h2 id="planning">1. Planning and Requirements</h2>
+                        <p>
+                            Before diving into building, I spent time researching and planning what I wanted 
+                            to create. My goal was simple: build a robot that could navigate autonomously 
+                            using sensors and avoid obstacles.
+                        </p>
+
+                        <h3>Defining the Project Scope</h3>
+                        <p>Here's what I decided my robot needed to do:</p>
+                        <ul>
+                            <li>Move forward and backward smoothly</li>
+                            <li>Detect obstacles using ultrasonic sensors</li>
+                            <li>Make intelligent decisions about changing direction</li>
+                            <li>Be portable and battery-powered</li>
+                            <li>Have a simple, clean design</li>
+                        </ul>
+
+                        <p>
+                            Keeping the scope manageable was crucial. Many beginners (including past me) try 
+                            to add too many features and end up with an incomplete project. Start simple, then 
+                            iterate!
+                        </p>
+                    </div>
+
+                    <!-- Component Selection -->
+                    <div class="blog-section">
+                        <h2 id="components">2. Selecting Components</h2>
+                        <p>
+                            After defining the requirements, I created a component list. Here's what I chose 
+                            and why:
+                        </p>
+
+                        <h3>Microcontroller: Arduino Uno</h3>
+                        <p>
+                            I went with the Arduino Uno because of its excellent documentation, large community, 
+                            and ease of programming. For beginners, you can't go wrong with Arduino.
+                        </p>
+
+                        <h3>Motors and Driver</h3>
+                        <p>
+                            I selected two DC gear motors (200 RPM) for good torque and speed balance, paired 
+                            with an L298N motor driver to control them. The L298N is affordable and can handle 
+                            up to 2A per channel—perfect for my needs.
+                        </p>
+
+                        <div class="image-placeholder">
+                            [Image: Components Layout]
+                        </div>
+
+                        <h3>Sensors</h3>
+                        <p>
+                            For obstacle detection, I used HC-SR04 ultrasonic sensors. They're inexpensive, 
+                            accurate up to 4 meters, and easy to interface with Arduino. I mounted three sensors: 
+                            front, left, and right for comprehensive coverage.
+                        </p>
+
+                        <h3>Power Supply</h3>
+                        <p>
+                            A 7.4V LiPo battery provided enough power for both the Arduino and motors. Make sure 
+                            to include a power switch and fuse for safety!
+                        </p>
+                    </div>
+
+                    <!-- Building Process -->
+                    <div class="blog-section">
+                        <h2 id="building">3. The Building Process</h2>
+                        
+                        <h3>Mechanical Assembly</h3>
+                        <p>
+                            I designed a simple two-layer acrylic chassis. The bottom layer holds the motors 
+                            and wheels, while the top layer houses the electronics. Using standoffs between 
+                            layers made wiring much cleaner.
+                        </p>
+
+                        <h3>Circuit Connections</h3>
+                        <p>
+                            Here's a simplified view of the main connections:
+                        </p>
+
+                        <div class="code-block">
+// Pin Definitions
+#define TRIG_PIN 9
+#define ECHO_PIN 10
+#define MOTOR_L_FWD 5
+#define MOTOR_L_BWD 6
+#define MOTOR_R_FWD 3
+#define MOTOR_R_BWD 11
+
+// Initialize sensor and motors
+void setup() {
+    pinMode(TRIG_PIN, OUTPUT);
+    pinMode(ECHO_PIN, INPUT);
+    pinMode(MOTOR_L_FWD, OUTPUT);
+    // ... more pin setups
+}
+                        </div>
+
+                        <div class="highlight-box">
+                            <p>
+                                <strong>Pro Tip:</strong> Label all your wires with tape and a marker. Future 
+                                you will be very grateful when debugging!
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Programming -->
+                    <div class="blog-section">
+                        <h2 id="programming">4. Programming the Logic</h2>
+                        <p>
+                            The programming took longer than expected, but it was the most rewarding part. 
+                            Here's my basic obstacle avoidance algorithm:
+                        </p>
+
+                        <div class="code-block">
+void loop() {
+    int distance = getDistance();
+    
+    if (distance > 30) {
+        // Path is clear, move forward
+        moveForward();
+    } else {
+        // Obstacle detected, make decision
+        stop();
+        
+        int leftDist = scanLeft();
+        int rightDist = scanRight();
+        
+        if (leftDist > rightDist) {
+            turnLeft();
+        } else {
+            turnRight();
+        }
+    }
+}
+                        </div>
+
+                        <h3>Testing and Iteration</h3>
+                        <p>
+                            My first version had issues: the robot would get stuck in corners and couldn't 
+                            recover. I added a backup routine and improved the decision-making logic with 
+                            more sensor readings and averaging to reduce noise.
+                        </p>
+                    </div>
+
+                    <!-- Challenges -->
+                    <div class="blog-section">
+                        <h2 id="challenges">5. Challenges I Faced</h2>
+                        
+                        <h3>Challenge 1: Noisy Sensor Readings</h3>
+                        <p>
+                            The ultrasonic sensors gave inconsistent readings. Solution: I implemented a 
+                            median filter by taking multiple readings and using the middle value.
+                        </p>
+
+                        <h3>Challenge 2: Motor Speed Imbalance</h3>
+                        <p>
+                            The robot wouldn't move straight because the motors had slightly different speeds. 
+                            Solution: I added calibration constants to adjust PWM values for each motor.
+                        </p>
+
+                        <h3>Challenge 3: Battery Management</h3>
+                        <p>
+                            I learned the hard way that LiPo batteries need proper care. I added a low-voltage 
+                            alarm and never charge them unattended now!
+                        </p>
+                    </div>
+
+                    <!-- Results -->
+                    <div class="blog-section">
+                        <h2 id="results">6. Results and What I Learned</h2>
+                        <p>
+                            After two months of work, my robot successfully navigated around my room, avoiding 
+                            furniture and obstacles. It wasn't perfect, but seeing it work autonomously for 
+                            the first time was incredible!
+                        </p>
+
+                        <div class="image-placeholder">
+                            [Video Demo or GIF]
+                        </div>
+
+                        <h3>Key Lessons</h3>
+                        <ol>
+                            <li><strong>Start Simple:</strong> My initial ambitious plans would have overwhelmed me</li>
+                            <li><strong>Document Everything:</strong> Taking notes helped immensely when debugging</li>
+                            <li><strong>Test Incrementally:</strong> Testing each component before integration saved hours</li>
+                            <li><strong>Join Communities:</strong> Online forums and Arduino communities were invaluable</li>
+                            <li><strong>Embrace Failure:</strong> Every bug taught me something new</li>
+                        </ol>
+                    </div>
+
+                    <!-- Next Steps -->
+                    <div class="blog-section">
+                        <h2 id="next-steps">7. What's Next?</h2>
+                        <p>
+                            Now that I have a working base, I'm planning several upgrades:
+                        </p>
+                        <ul>
+                            <li>Add line-following capability with IR sensors</li>
+                            <li>Implement SLAM (Simultaneous Localization and Mapping)</li>
+                            <li>Add wireless control via Bluetooth</li>
+                            <li>Design a custom PCB to replace the breadboard</li>
+                            <li>Experiment with computer vision using a Raspberry Pi camera</li>
+                        </ul>
+                    </div>
+
+                    <!-- Conclusion -->
+                    <div class="blog-section">
+                        <h2>Conclusion</h2>
+                        <p>
+                            Building your first autonomous robot is an incredible learning experience. You'll 
+                            encounter challenges, spend hours debugging, and probably want to give up at times. 
+                            But when you finally see your creation moving on its own, making decisions, and 
+                            navigating its environment—that moment makes it all worthwhile.
+                        </p>
+                        <p>
+                            If you're thinking about starting your own robotics project, my advice is simple: 
+                            just start. Don't wait for the perfect plan or all the knowledge. Learn by doing, 
+                            ask questions, and enjoy the process!
+                        </p>
+
+                        <div class="highlight-box">
+                            <p>
+                                Have questions about this project? Feel free to reach out via email or leave 
+                                a comment. I'd love to hear about your robotics projects too!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <aside class="sidebar">
+                    <!-- Author Card -->
+                    <div class="sidebar-card">
+                        <div class="author-card">
+                            <div class="author-avatar">YN</div>
+                            <div class="author-info">
+                                <h4>Your Name</h4>
+                                <p>Robotics Enthusiast</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Table of Contents -->
+                    <div class="sidebar-card">
+                        <h3>Table of Contents</h3>
+                        <ul class="toc-list">
+                            <li><a href="#planning">1. Planning and Requirements</a></li>
+                            <li><a href="#components">2. Selecting Components</a></li>
+                            <li><a href="#building">3. The Building Process</a></li>
+                            <li><a href="#programming">4. Programming the Logic</a></li>
+                            <li><a href="#challenges">5. Challenges I Faced</a></li>
+                            <li><a href="#results">6. Results and Learnings</a></li>
+                            <li><a href="#next-steps">7. What's Next?</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Related Posts -->
+                    <div class="sidebar-card">
+                        <h3>Related Posts</h3>
+                        <div class="related-posts">
+                            <div class="related-post-item">
+                                <a href="pid-control-robotics.html">Understanding PID Control</a>
+                                <p>Learn the fundamentals of PID control for smooth robot motion</p>
+                            </div>
+                            <div class="related-post-item">
+                                <a href="getting-started-ros.html">Getting Started with ROS</a>
+                                <p>A beginner's guide to Robot Operating System</p>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Your Name. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#" target="_blank">GitHub</a>
+                <a href="#" target="_blank">LinkedIn</a>
+                <a href="#" target="_blank">Twitter</a>
+                <a href="mailto:your.email@example.com">Email</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

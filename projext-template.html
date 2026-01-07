@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Name - Your Name</title>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        .project-detail {
+            padding: 5rem 0;
+            background: white;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: #2c5aa0;
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            gap: 8px;
+        }
+
+        .project-header-detail {
+            margin-bottom: 3rem;
+        }
+
+        .project-title-main {
+            font-size: 3rem;
+            color: #1a365d;
+            margin-bottom: 1rem;
+        }
+
+        .project-meta {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #4a5568;
+            font-size: 0.95rem;
+        }
+
+        .meta-item strong {
+            color: #2c5aa0;
+        }
+
+        .project-content {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 3rem;
+        }
+
+        .main-content {
+            max-width: 800px;
+        }
+
+        .sidebar {
+            background: #f7fafc;
+            padding: 2rem;
+            border-radius: 12px;
+            height: fit-content;
+            position: sticky;
+            top: 100px;
+        }
+
+        .sidebar h3 {
+            color: #1a365d;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .tech-badge {
+            background: white;
+            color: #2c5aa0;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            border: 1px solid #e6f2ff;
+        }
+
+        .project-section {
+            margin-bottom: 3rem;
+        }
+
+        .project-section h2 {
+            color: #1a365d;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 3px solid #2c5aa0;
+            padding-bottom: 0.5rem;
+        }
+
+        .project-section h3 {
+            color: #2c5aa0;
+            font-size: 1.5rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .project-section p {
+            color: #4a5568;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .project-section ul {
+            color: #4a5568;
+            line-height: 1.8;
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .project-section li {
+            margin-bottom: 0.5rem;
+        }
+
+        .image-placeholder {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, #e6f2ff, #f0f7ff);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #2c5aa0;
+            font-size: 1.2rem;
+            margin: 2rem 0;
+        }
+
+        .code-block {
+            background: #1a365d;
+            color: #e6f2ff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 1.5rem 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .external-links {
+            margin-top: 2rem;
+        }
+
+        .external-link {
+            display: block;
+            color: #2c5aa0;
+            text-decoration: none;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .external-link:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 968px) {
+            .project-content {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar {
+                position: static;
+            }
+
+            .project-title-main {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-brand">Your Name</div>
+                <ul class="nav-menu">
+                    <li><a href="../index.html#home">Home</a></li>
+                    <li><a href="../index.html#about">About</a></li>
+                    <li><a href="../index.html#projects">Projects</a></li>
+                    <li><a href="../index.html#teaching">Teaching</a></li>
+                    <li><a href="../index.html#blog">Blog</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Project Detail -->
+    <section class="project-detail">
+        <div class="container">
+            <a href="../index.html#projects" class="back-link">← Back to Projects</a>
+
+            <div class="project-header-detail">
+                <h1 class="project-title-main">Autonomous Line Following Robot</h1>
+                <div class="project-meta">
+                    <div class="meta-item">
+                        <strong>Date:</strong> September 2024
+                    </div>
+                    <div class="meta-item">
+                        <strong>Duration:</strong> 2 months
+                    </div>
+                    <div class="meta-item">
+                        <strong>Type:</strong> Robotics
+                    </div>
+                </div>
+                <div class="tech-stack">
+                    <span class="tech-badge">Arduino</span>
+                    <span class="tech-badge">C++</span>
+                    <span class="tech-badge">PID Control</span>
+                    <span class="tech-badge">PCB Design</span>
+                    <span class="tech-badge">Sensor Fusion</span>
+                </div>
+            </div>
+
+            <div class="project-content">
+                <div class="main-content">
+                    <!-- Overview Section -->
+                    <div class="project-section">
+                        <h2>Project Overview</h2>
+                        <p>
+                            This project involved designing and building an autonomous robot capable of following 
+                            complex paths using infrared sensors and advanced control algorithms. The robot was 
+                            developed for a college robotics competition and achieved first place for its speed 
+                            and accuracy.
+                        </p>
+                        <p>
+                            The main challenge was to create a system that could handle sharp turns, intersections, 
+                            and varying lighting conditions while maintaining high speed and stability. This required 
+                            careful sensor placement, motor control tuning, and algorithm optimization.
+                        </p>
+                        
+                        <div class="image-placeholder">
+                            [Robot Image / Video Demo]
+                        </div>
+                    </div>
+
+                    <!-- Technical Details Section -->
+                    <div class="project-section">
+                        <h2>Technical Implementation</h2>
+                        
+                        <h3>Hardware Design</h3>
+                        <p>
+                            The robot was built using a custom chassis designed in SolidWorks and 3D printed. 
+                            Key hardware components include:
+                        </p>
+                        <ul>
+                            <li>Arduino Nano microcontroller for processing</li>
+                            <li>8-sensor IR array for precise line detection</li>
+                            <li>L298N motor driver for dual DC motors</li>
+                            <li>Custom PCB for clean wiring and reduced noise</li>
+                            <li>7.4V LiPo battery for power</li>
+                        </ul>
+
+                        <div class="image-placeholder">
+                            [Circuit Diagram / PCB Design]
+                        </div>
+
+                        <h3>Control Algorithm</h3>
+                        <p>
+                            The robot uses a PID (Proportional-Integral-Derivative) controller to maintain 
+                            its position on the line. The algorithm calculates error based on sensor readings 
+                            and adjusts motor speeds accordingly.
+                        </p>
+
+                        <div class="code-block">
+// PID Control Implementation
+float error = calculateError(sensorValues);
+integral += error;
+float derivative = error - lastError;
+
+float correction = (Kp * error) + (Ki * integral) + (Kd * derivative);
+
+leftMotorSpeed = baseSpeed + correction;
+rightMotorSpeed = baseSpeed - correction;
+
+setMotorSpeeds(leftMotorSpeed, rightMotorSpeed);
+lastError = error;
+                        </div>
+
+                        <h3>Sensor Calibration</h3>
+                        <p>
+                            Implemented automatic calibration routine to adapt to different surface conditions 
+                            and lighting. The robot calibrates by moving over the line and recording minimum 
+                            and maximum sensor values, then uses these to normalize readings during operation.
+                        </p>
+                    </div>
+
+                    <!-- Challenges Section -->
+                    <div class="project-section">
+                        <h2>Challenges & Solutions</h2>
+                        
+                        <h3>1. Sharp Turn Handling</h3>
+                        <p>
+                            Initial implementation struggled with 90-degree turns. Solution: Implemented adaptive 
+                            speed control that reduces speed when high error is detected, allowing the robot to 
+                            navigate sharp corners without losing the line.
+                        </p>
+
+                        <h3>2. Lighting Variations</h3>
+                        <p>
+                            Performance degraded under different lighting conditions. Solution: Added ambient 
+                            light compensation and implemented dynamic threshold adjustment based on real-time 
+                            sensor readings.
+                        </p>
+
+                        <h3>3. Motor Speed Inconsistency</h3>
+                        <p>
+                            Noticed drift due to motor manufacturing variations. Solution: Implemented motor 
+                            calibration factors and used encoder feedback for precise speed control.
+                        </p>
+                    </div>
+
+                    <!-- Results Section -->
+                    <div class="project-section">
+                        <h2>Results & Performance</h2>
+                        <p>
+                            The final robot achieved impressive performance metrics:
+                        </p>
+                        <ul>
+                            <li>Maximum speed: 2.5 m/s on straight paths</li>
+                            <li>Successfully navigated complex tracks with 95% accuracy</li>
+                            <li>Won first place in college robotics competition</li>
+                            <li>Battery life: 45 minutes of continuous operation</li>
+                        </ul>
+
+                        <div class="image-placeholder">
+                            [Competition Results / Performance Graphs]
+                        </div>
+                    </div>
+
+                    <!-- Future Improvements Section -->
+                    <div class="project-section">
+                        <h2>Future Improvements</h2>
+                        <ul>
+                            <li>Implement machine learning for adaptive PID tuning</li>
+                            <li>Add wireless control and telemetry for real-time monitoring</li>
+                            <li>Design custom motor controller for better efficiency</li>
+                            <li>Integrate obstacle detection using ultrasonic sensors</li>
+                            <li>Develop smartphone app for parameter adjustment</li>
+                        </ul>
+                    </div>
+
+                    <!-- Lessons Learned -->
+                    <div class="project-section">
+                        <h2>Lessons Learned</h2>
+                        <p>
+                            This project taught me the importance of systematic testing and iterative improvement. 
+                            Key takeaways include:
+                        </p>
+                        <ul>
+                            <li>The value of proper sensor calibration for consistent performance</li>
+                            <li>How small mechanical imperfections significantly impact control algorithms</li>
+                            <li>The importance of modular code design for easy debugging and tuning</li>
+                            <li>Real-world testing is essential - simulations can't capture everything</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <aside class="sidebar">
+                    <h3>Project Links</h3>
+                    <div class="external-links">
+                        <a href="#" class="external-link" target="_blank">📁 GitHub Repository</a>
+                        <a href="#" class="external-link" target="_blank">🎥 Demo Video</a>
+                        <a href="#" class="external-link" target="_blank">📄 Technical Documentation</a>
+                        <a href="#" class="external-link" target="_blank">🏆 Competition Results</a>
+                    </div>
+
+                    <h3 style="margin-top: 2rem;">Related Projects</h3>
+                    <div class="external-links">
+                        <a href="robotic-arm.html" class="external-link">→ Robotic Arm Manipulator</a>
+                        <a href="warehouse-system.html" class="external-link">→ Smart Warehouse System</a>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Your Name. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#" target="_blank">GitHub</a>
+                <a href="#" target="_blank">LinkedIn</a>
+                <a href="#" target="_blank">Twitter</a>
+                <a href="mailto:your.email@example.com">Email</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
